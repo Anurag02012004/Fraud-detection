@@ -21,8 +21,6 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-models/*.pth
-models/*.pt
 data/*.csv
 data/*.pkl
 *.pkl
