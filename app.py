@@ -20,7 +20,6 @@ from src.utils import calculate_metrics, set_seed
 # Set page config
 st.set_page_config(
     page_title="Advanced GNN Fraud Detection",
-    page_icon="🔍",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -67,12 +66,12 @@ def load_model(model_type='gat', device='cpu'):
                 checkpoint = torch.load(model_path, map_location=device)
                 model.load_state_dict(checkpoint['model_state_dict'])
                 model.eval()
-                st.sidebar.success("✅ Trained model loaded")
+                st.sidebar.success("Trained model loaded")
             except Exception as e:
-                st.sidebar.warning(f"⚠️ Error loading checkpoint: {e}. Using untrained model.")
+                st.sidebar.warning(f"Error loading checkpoint: {e}. Using untrained model.")
         else:
-            st.sidebar.warning(f"⚠️ Model not found at {model_path}. Using untrained model.")
-            st.sidebar.info("💡 Train a model using: python train.py")
+            st.sidebar.warning(f"Model not found at {model_path}. Using untrained model.")
+            st.sidebar.info("Train a model using: python train.py")
         
         return model.to(device)
     except Exception as e:
@@ -139,10 +138,10 @@ def predict_fraud(model, data, device='cpu'):
 
 def main():
     # Header
-    st.markdown('<p class="main-header">🔍 Advanced GNN Fraud Detection System</p>', unsafe_allow_html=True)
+    st.markdown('<p class="main-header">Advanced GNN Fraud Detection System</p>', unsafe_allow_html=True)
     
     # Sidebar
-    st.sidebar.title("⚙️ Configuration")
+    st.sidebar.title("Configuration")
     model_type = st.sidebar.selectbox("Model Type", ["gat", "gcn", "ensemble"], index=0)
     sample_size = st.sidebar.slider("Graph Sample Size", 50, 500, 200)
     
@@ -177,7 +176,7 @@ def main():
         st.metric("Recall", f"{metrics['recall']:.3f}")
     
     # Main content
-    tab1, tab2, tab3, tab4 = st.tabs(["📊 Overview", "🔍 Predictions", "📈 Analytics", "🌐 Graph Visualization"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Overview", "Predictions", "Analytics", "Graph Visualization"])
     
     with tab1:
         st.header("Dataset Overview")

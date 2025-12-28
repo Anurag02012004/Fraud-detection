@@ -7,7 +7,7 @@ import subprocess
 import sys
 
 def main():
-    print("🚀 Preparing project for deployment...")
+    print("Preparing project for deployment...")
     print("=" * 50)
     
     # Create necessary directories
@@ -18,7 +18,7 @@ def main():
     # Train model if it doesn't exist
     model_path = 'models/best_gat.pth'
     if not os.path.exists(model_path):
-        print("\n📊 Training GAT model (required for demo)...")
+        print("\nTraining GAT model (required for demo)...")
         print("This may take a few minutes. Please be patient...")
         subprocess.run([
             sys.executable, "train.py", 
@@ -26,9 +26,9 @@ def main():
             "--epochs", "50"
         ])
     else:
-        print(f"\n✅ Model already exists at {model_path}")
+        print(f"\nModel already exists at {model_path}")
     
-    print("\n✅ Project is ready for deployment!")
+    print("\nProject is ready for deployment!")
     print("\nNext steps:")
     print("1. Push to GitHub: git push")
     print("2. Deploy on Streamlit Cloud: https://share.streamlit.io")
