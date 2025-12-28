@@ -2,7 +2,7 @@
 
 An advanced, production-ready Graph Neural Network system for detecting fraudulent transactions using state-of-the-art GNN architectures (GAT, GCN) with PyTorch Geometric.
 
-## 🚀 Key Features
+## Key Features
 
 - **Advanced GNN Architectures**: Implements both Graph Attention Networks (GAT) and Graph Convolutional Networks (GCN)
 - **Multi-Layer Feature Engineering**: Temporal features, graph-based features, and transaction patterns
@@ -11,7 +11,7 @@ An advanced, production-ready Graph Neural Network system for detecting fraudule
 - **Production Ready**: Deployed demo available, complete evaluation suite
 - **Comprehensive Metrics**: Precision, Recall, F1-Score, AUC-ROC, PR-AUC
 
-## 📊 Architecture
+## Architecture
 
 The system models financial transactions as a heterogeneous graph where:
 - **Nodes**: Users, Accounts, Transactions
@@ -19,7 +19,7 @@ The system models financial transactions as a heterogeneous graph where:
 - **Node Features**: Transaction amounts, timestamps, account balances, behavioral patterns
 - **Edge Features**: Transaction types, amounts, time differences
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 reaidy_ML/
@@ -37,13 +37,13 @@ reaidy_ML/
 └── README.md             # This file
 ```
 
-## 🛠️ Installation
+## Installation
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 📈 Usage
+## Usage
 
 ### Training
 
@@ -57,7 +57,7 @@ python train.py
 streamlit run app.py
 ```
 
-## 🔗 Demo
+## Demo
 
 ### Local Demo
 ```bash
@@ -83,7 +83,7 @@ streamlit run app.py
 
 For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md)
 
-## 📝 Technologies
+## Technologies
 
 - PyTorch Geometric
 - NetworkX
@@ -92,7 +92,7 @@ For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md)
 - Streamlit
 - Optuna (Hyperparameter Optimization)
 
-## 🎯 Performance
+## Performance
 
 The model achieves:
 - **AUC-ROC**: >0.95
