@@ -104,7 +104,7 @@ def create_interactive_graph(data, sample_size=200):
     # Add nodes
     for idx in indices:
         label = "Fraud" if data.y[idx].item() == 1 else "Legitimate"
-        G.add_node(idx, label=label, group=data.y[idx].item())
+        G.add_node(int(idx), label=label, group=int(data.y[idx].item()))
     
     # Add edges (sample)
     edge_index = data.edge_index.cpu().numpy()
@@ -113,8 +113,9 @@ def create_interactive_graph(data, sample_size=200):
     
     for i in edge_indices:
         src, dst = edge_index[0, i], edge_index[1, i]
-        if src in G and dst in G:
-            G.add_edge(int(src), int(dst))
+        src_int, dst_int = int(src), int(dst)
+        if src_int in G and dst_int in G:
+            G.add_edge(src_int, dst_int)
     
     # Create Pyvis network
     net = Network(height='500px', width='100%', bgcolor='#222222', font_color='white')
